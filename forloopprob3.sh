@@ -1,14 +1,11 @@
 #!/bin/bash -x
 read -p "Enter a number:"n
-for (( i=1; i<=n; i++ ))
+for (( i=2; i<=n/2; i++ ))
 do
-while [[ $n -ge 0 ]]
-do
-if (( $n%1 -eq 0 && $n%$n -eq 0 ))
+if (( $(($num%$i)) -eq 0 ))
 then
-echo "Number is prime"
-else
-echo "Number is not prime"
+echo "It is not a prime number"
+exit
 fi
 done
-done
+echo "It is a prime number"
